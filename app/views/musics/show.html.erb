@@ -1,0 +1,45 @@
+<div class="row clearfix">
+  <div class="col-md-12 column">
+    <p id="notice"><%= notice %></p>
+    <hr>
+    <%= link_to '<< Back', musics_path, class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_music_path(@music), class: "btn btn-primary" %>
+    <hr>
+    <h3>
+      <strong>Title:</strong>
+      <%= @music.title %>
+    </h3>
+    <hr>
+  </div>
+</div>
+<div class="row clearfix">
+  <div class="col-md-12 column">
+    <div class="panel-group" id="panel-840005">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <a class="panel-title" data-toggle="collapse" data-parent="#panel-840005" href="#panel-element-192046"><strong>Chords</strong></a>
+        </div>
+        <div id="panel-element-192046" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <pre style="font-size:34px"><%= @music.chord %></pre>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <a class="panel-title" data-toggle="collapse" data-parent="#panel-840005" href="#panel-element-359711"><strong>Lyric</strong></a>
+        </div>
+        <div id="panel-element-359711" class="panel-collapse collapse">
+          <div class="panel-body">
+            <pre style="font-size:34px"><%= @music.lyric %></pre>
+          </div>
+        </div>
+      </div>
+        <p><strong>Observations:</strong></p>
+        <%= @music.obs %>
+        <br>
+        <br>
+        <br>
+    </div>
+  </div>
+</div>

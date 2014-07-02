@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  chord: MyText
+  lyric: MyText
+  obs: MyString
+  in_use: false
+
+two:
+  title: MyString
+  chord: MyText
+  lyric: MyText
+  obs: MyString
+  in_use: false

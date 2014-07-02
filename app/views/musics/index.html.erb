@@ -1,0 +1,32 @@
+<div class="row clearfix">
+  <div class="col-md-12 column">
+    <hr>
+    <%= link_to 'New music', new_music_path, class: "btn btn-primary" %>
+    <hr>
+  </div>
+  <div class="col-md-12 column">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Lyric</th>
+          <th>Obs</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @musics.each do |music| %>
+          <tr class="<%= (music.in_use)?'danger':'active' %>">
+            <td><%= music.id %></td>
+            <td><%= link_to music.title, music %></td>
+            <td><%= truncate(music.lyric) %></td>
+            <td><%= music.obs %></td>
+              <td><%= link_to 'Edit', edit_music_path(music) %></td>
+            <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
