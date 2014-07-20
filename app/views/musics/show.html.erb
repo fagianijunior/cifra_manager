@@ -4,6 +4,7 @@
     <hr>
     <%= link_to '<< Back', musics_path, class: "btn btn-primary" %>
     <%= link_to 'Edit', edit_music_path(@music), class: "btn btn-primary" %>
+    <%= link_to 'Letra', music_path(@music), class: "btn btn-primary", target: "letra" %>
     <hr>
     <h3>
       <strong>Title:</strong>
@@ -19,7 +20,7 @@
         <div class="panel-heading">
           <a class="panel-title" data-toggle="collapse" data-parent="#panel-840005" href="#panel-element-192046"><strong>Chords</strong></a>
         </div>
-        <div id="panel-element-192046" class="panel-collapse collapse in">
+        <div id="panel-element-192046" class="panel-collapse collapse">
           <div class="panel-body">
             <pre style="font-size:34px"><%= @music.chord %></pre>
           </div>
@@ -29,7 +30,7 @@
         <div class="panel-heading">
           <a class="panel-title" data-toggle="collapse" data-parent="#panel-840005" href="#panel-element-359711"><strong>Lyric</strong></a>
         </div>
-        <div id="panel-element-359711" class="panel-collapse collapse">
+        <div id="panel-element-359711" class="panel-collapse collapse in">
           <div class="panel-body">
             <pre style="font-size:34px"><%= @music.lyric %></pre>
           </div>
