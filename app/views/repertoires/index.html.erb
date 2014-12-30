@@ -1,0 +1,27 @@
+<h1>Listing repertoires</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Music</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @repertoires.each do |repertoire| %>
+      <tr>
+        <td><%= repertoire.order %></td>
+        <td><%= repertoire.music.title %></td>
+        <td><%= link_to 'Show', repertoire %></td>
+        <td><%= link_to 'Edit', edit_repertoire_path(repertoire) %></td>
+        <td><%= link_to 'Destroy', repertoire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Repertoire', new_repertoire_path %>

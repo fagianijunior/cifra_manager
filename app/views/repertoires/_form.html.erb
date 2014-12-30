@@ -1,0 +1,11 @@
+<%= simple_form_for(@repertoire) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.number_field :order %>
+    <%= f.association :music, label_method: :title %>
+  </div>
+  <div class="actions">
+    <%= f.button :submit, "Salvar" %>
+  </div>
+<% end %>

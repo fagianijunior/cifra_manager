@@ -1,37 +1,23 @@
-<%= form_for(@music) do |f| %>
-  <% if @music.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@music.errors.count, "error") %> prohibited this music from being saved:</h2>
-
-      <ul>
-      <% @music.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+<%= simple_form_for(@music, html: { class: 'form-horizontal' } ) do |f| %>
+  <%= f .error_notification %>
+  <div class="form-group">
+    <%= f.input :title, class: "form-control input-lg" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :chord %><br>
-    <%= f.text_area :chord %>
+    <%= f.text_area :chord, class: "form-control input-lg" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :lyric %><br>
-    <%= f.text_area :lyric %>
+    <%= f.text_area :lyric, class: "form-control input-lg" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :obs %><br>
-    <%= f.text_field :obs %>
+    <%= f.text_field :obs, class: "form-control input-lg" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :in_use %><br>
-    <%= f.check_box :in_use %>
+    <%= f.check_box :in_use, class: " form-control input-lg" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <%= f.submit "Salvar", class: "btn btn-default btn-lg" %>
 <% end %>

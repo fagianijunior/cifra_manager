@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504183108) do
+ActiveRecord::Schema.define(version: 20140914204901) do
 
   create_table "musics", force: true do |t|
     t.string   "title"
@@ -22,5 +22,14 @@ ActiveRecord::Schema.define(version: 20140504183108) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "repertoires", force: true do |t|
+    t.integer  "order"
+    t.integer  "music_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "repertoires", ["music_id"], name: "index_repertoires_on_music_id", using: :btree
 
 end

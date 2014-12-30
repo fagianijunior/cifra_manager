@@ -1,0 +1,26 @@
+<%= form_for(@repertoire) do |f| %>
+  <% if @repertoire.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@repertoire.errors.count, "error") %> prohibited this repertoire from being saved:</h2>
+
+      <ul>
+      <% @repertoire.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :order %><br>
+    <%= f.number_field :order %>
+  </div>
+  <div class="field">
+    <%= f.label :music_id %><br>
+    <!--%= f.text_field :music_id %-->
+    <%= f.select :music_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
