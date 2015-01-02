@@ -7,12 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-12">
-      <%= yield %>
+<%= nav_bar :fixed => :top, :brand => "Cifra manager 0.5b", :responsive => true do %>
+    <%= menu_group do %>
+        <%= menu_item "Home", root_path %>
+        <%= menu_divider %>
+        <%= drop_down "Musicas" do %>
+            <%= menu_item "Todas as musicas", musics_path %>
+            <%= menu_item "Adiciona nova musica", new_music_path %>
+            <%= menu_item "Things you're not even cool enough to buy anyway", '#' %>
+        <% end %>
+        <%= menu_item "About Us", '#' %>
+        <%= menu_item "Contact", '#' %>
+    <% end %>
+    <%= menu_group :pull => :right do %>
+        <% if true %>
+            <%= menu_item "Log Out", '#' %>
+        <% else %>
+            <%= form_for :q, html: {class: "navbar-form pull-right"} do |f| -%>
+              <p><%= f.text_field :email %>
+              <p><%= f.password_field :password %>
+              <p><%= f.submit "Sign in" %></p>
+            <% end -%>
+        <% end %>
+    <% end %>
+<% end %>
+  <div class="container-fluid">
+  	<div class="row clearfix">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 column">
+        <%= yield %>
+        <%= debug(params) if Rails.env.development? %>
+      </div>
     </div>
   </div>
-</div>
 </body>
 </html>

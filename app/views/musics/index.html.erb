@@ -1,32 +1,34 @@
-<div class="row clearfix">
-  <div class="col-md-12 column">
-    <hr>
-    <%= link_to 'New music', new_music_path, class: "btn btn-primary" %>
-    <hr>
+<hr>
+<%= link_to 'New music', new_music_path, class: "btn btn-primary" %>
+
+<%= search_form_for @q, class: "form-horizontal" do |f| %>
+  <div class="form-group">
+    <%= f.label :title_or_lyric_or_obs_cont, class: "col-sm-2 control-label"%>
+    <div class="col-sm-2">
+      <%= f.search_field :title_or_lyric_or_obs_cont, class: "form-control" %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.submit "Procurar", class: "btn btn-default" %>
+    </div>
   </div>
-  <div class="col-md-12 column">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Title</th>
-          <th>Lyric</th>
-          <th>Obs</th>
-          <th colspan="2"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @musics.each do |music| %>
-          <tr class="<%= (music.in_use)?'danger':'active' %>">
-            <td><%= music.id %></td>
-            <td><%= link_to music.title, music %></td>
-            <td><%= truncate(music.lyric) %></td>
-            <td><%= music.obs %></td>
-              <td><%= link_to 'Edit', edit_music_path(music) %></td>
-            <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+<% end %>
+<div class="text-center">
+  <%= will_paginate %>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :id, "#") %></th>
+      <th><%= sort_link(@q, :title, "Titulo") %></th>
+      <th><%= sort_link(@q, :lyric, "Letra") %></th>
+      <th><%= sort_link(@q, :obs, "Obs.") %></th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @musics %>
+  </tbody>
+</table>
+<div class="text-center">
+  <%= will_paginate %>
 </div>

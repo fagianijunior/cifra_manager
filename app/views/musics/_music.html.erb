@@ -1,0 +1,8 @@
+<tr class="<%= (music.in_use)?'danger':'active' %>">
+  <td><%= music.id %></td>
+  <td><%= link_to music.title, music %></td>
+  <td><%= truncate(music.lyric) %></td>
+  <td><%= music.obs %></td>
+  <td><%= link_to 'Edit', edit_music_path(music) %></td>
+  <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

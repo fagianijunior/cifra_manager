@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
-                          :github => 'anjlab/bootstrap-rails',
-                          :branch => '3.0.0'
+gem 'node'
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-will_paginate'
 
+gem 'ransack'
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
