@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'node'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'bootstrap-will_paginate'
 
 gem 'ransack'

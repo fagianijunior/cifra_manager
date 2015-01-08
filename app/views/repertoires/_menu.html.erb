@@ -1,0 +1,24 @@
+<h3><%= glyph(:list) %> Repertorio</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Musica</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @repertoires.each do |repertoire| %>
+      <tr>
+        <td><%= repertoire.order %></td>
+        <td><%= link_to repertoire.music.title, repertoire.music %></td>
+        <td><%= link_to glyph(:trash), repertoire, method: :delete, data: { confirm: 'Remover musica do repertorio?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= menu_group do %>
+  <%= menu_item glyph(:edit) + " Editar repertorio", repertoires_path %>
+<% end %>
+<hr>

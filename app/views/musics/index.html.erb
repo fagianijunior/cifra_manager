@@ -1,34 +1,20 @@
-<hr>
-<%= link_to 'New music', new_music_path, class: "btn btn-primary" %>
-
-<%= search_form_for @q, class: "form-horizontal" do |f| %>
-  <div class="form-group">
-    <%= f.label :title_or_lyric_or_obs_cont, class: "col-sm-2 control-label"%>
-    <div class="col-sm-2">
-      <%= f.search_field :title_or_lyric_or_obs_cont, class: "form-control" %>
-    </div>
-    <div class="col-sm-2">
-      <%= f.submit "Procurar", class: "btn btn-default" %>
-    </div>
+<div class="well">
+  <div class="text-center">
+    <%= will_paginate %>
   </div>
-<% end %>
-<div class="text-center">
-  <%= will_paginate %>
-</div>
-<table class="table">
-  <thead>
-    <tr>
-      <th><%= sort_link(@q, :id, "#") %></th>
-      <th><%= sort_link(@q, :title, "Titulo") %></th>
-      <th><%= sort_link(@q, :lyric, "Letra") %></th>
-      <th><%= sort_link(@q, :obs, "Obs.") %></th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @musics %>
-  </tbody>
-</table>
-<div class="text-center">
-  <%= will_paginate %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= sort_link(@q, :title, "Titulo") %></th>
+        <th><%= sort_link(@q, :lyric, "Letra") %></th>
+        <th colspan="2"  width="2px"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @musics %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= will_paginate %>
+  </div>
 </div>

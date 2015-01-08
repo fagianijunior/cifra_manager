@@ -1,0 +1,18 @@
+<h3><%= glyph(:music) %> Louvor</h3>
+<%= search_form_for @q, url: search_musics_path, class: "form-horizontal" do |f| %>
+  <div class="input-group">
+    <span class="input-group-addon">
+      <%= glyph(:search) %>
+    </span>
+    <%= f.search_field :title_or_lyric_or_obs_cont, class: "form-control" %>
+    <span class="input-group-btn">
+      <%= f.submit "Vai", class: "btn btn-default" %>
+    </span>
+  </div><!-- /input-group -->
+<% end %>
+<%= menu_group do %>
+  <%= menu_item glyph(:book) + " Todas as musicas", musics_path %>
+  <%= menu_item glyph(:pencil) + " Nova musica", new_music_path %>
+<% end %>
+
+<%= render "repertoires/menu" %>

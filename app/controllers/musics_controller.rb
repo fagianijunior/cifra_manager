@@ -3,13 +3,18 @@ class MusicsController < ApplicationController
 
   # GET /musics
   # GET /musics.json
-  def index
-    @q = Music.search(params[:q])
+  def index 
     @musics = @q.result.paginate(page: params[:page])
+  end
+
+  def search
+    index
+    render :index
   end
 
   # GET /musics/1
   # GET /musics/1.json
+  
   def show
   end
 

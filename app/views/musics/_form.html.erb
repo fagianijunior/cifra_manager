@@ -1,41 +1,13 @@
 <%= simple_form_for(@music, html: {class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :title, label: "Titulo", class: "form-control input-lg" %>
-  <%= f.input :chord, as: "text", class: "form-control input-lg" %>
-  <%= f.input :lyric, as: "text", class: "form-control input-lg", rows: 10 %>
-  <%= f.input :obs, class: "form-control input-lg" %>
-  <%= f.check_box :in_use, class: "form-control input-lg" %>
+  <div class="form-group">
+    <%= f.input :title, label: "Titulo", input_html: { class: "form-control input-lg" } %>
+    <%= f.input :chord, label: "Notas", as: "text", input_html: { class: "form-control input-lg", rows: 10 } %>
+    <%= f.input :lyric, label: "Letra", as: "text", input_html: { class: "form-control input-lg", rows: 10 } %>
+    <%= f.input :obs, label: "Observação", as: "text", input_html: { class: "form-control input-lg", rows: 5 } %>
+  </div>
+  <!-- in_use não é mais utilizado, será removido posteriormente -->
+  <!--%= f.input :in_use, label: "Em uso", input_html: { class: "form-control input-lg" } %-->
+  <hr>
   <%= f.submit "Salvar", class: "btn btn-default btn-lg" %>
 <% end %>
-
-
-
-
-
-
-			<form class="form-horizontal" role="form">
-				<div class="form-group">
-					 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-					<div class="col-sm-10">
-						<input type="email" class="form-control" id="inputEmail3" />
-					</div>
-				</div>
-				<div class="form-group">
-					 <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-					<div class="col-sm-10">
-						<input type="password" class="form-control" id="inputPassword3" />
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<div class="checkbox">
-							 <label><input type="checkbox" /> Remember me</label>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						 <button type="submit" class="btn btn-default">Sign in</button>
-					</div>
-				</div>
-			</form>

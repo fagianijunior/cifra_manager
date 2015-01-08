@@ -4,7 +4,7 @@ class RepertoiresController < ApplicationController
   # GET /repertoires
   # GET /repertoires.json
   def index
-    @repertoires = Repertoire.all
+    
   end
 
   # GET /repertoires/1
@@ -42,7 +42,7 @@ class RepertoiresController < ApplicationController
   def update
     respond_to do |format|
       if @repertoire.update(repertoire_params)
-        format.html { redirect_to @repertoire, notice: 'Repertoire was successfully updated.' }
+        format.html { redirect_to repertoires_path, notice: 'Repertoire was successfully updated.' }
         format.json { render :show, status: :ok, location: @repertoire }
       else
         format.html { render :edit }
