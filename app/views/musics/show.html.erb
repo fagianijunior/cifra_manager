@@ -2,9 +2,13 @@
   <div class="col-md-12 column">
     <p id="notice"><%= notice %></p>
     <hr>
-    <%= link_to '<< Back', musics_path, class: "btn btn-primary" %>
-    <%= link_to 'Edit', edit_music_path(@music), class: "btn btn-primary" %>
+    <%= link_to '<< Musicas', musics_path, class: "btn btn-primary" %>
+    <%= link_to 'Editar', edit_music_path(@music), class: "btn btn-primary" %>
     <%= link_to 'Letra', music_path(@music), class: "btn btn-primary", target: "letra" %>
+    <%= simple_form_for @repertoire do |f| %>
+      <%= f.input :music_id, as: :hidden, input_html: { value: @music.id } %>
+      <%= f.submit "Adicionar ao repertorio", class: "btn btn-primary" %>
+    <% end %>
     <hr>
     <h3>
       <strong>Title:</strong>

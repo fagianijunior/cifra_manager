@@ -5,9 +5,14 @@ class ApplicationController < ActionController::Base
   
   before_filter :set_global_search_variable
   before_action :set_repertoires
+  before_action :set_repertoire_new
 
   def set_repertoires
     @repertoires = Repertoire.all
+  end
+  
+  def set_repertoire_new
+    @repertoire = Repertoire.new
   end
   
   def set_global_search_variable
