@@ -4,8 +4,10 @@ gem 'node'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'bootstrap-will_paginate'
 
+gem 'carrierwave'
+
 gem 'ransack'
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use mysql as the database for Active Record

@@ -11,14 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914204901) do
+ActiveRecord::Schema.define(version: 20150121150622) do
+
+  create_table "departments", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "musics", force: true do |t|
     t.string   "title"
     t.text     "chord"
     t.text     "lyric"
     t.string   "obs"
-    t.boolean  "in_use"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slide"
+  end
+
+  create_table "patrimonies", force: true do |t|
+    t.string   "item"
+    t.float    "price"
+    t.date     "date_of_entry"
+    t.date     "date_of_exit"
+    t.integer  "department_id"
+    t.boolean  "defect"
+    t.text     "more_info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "patrimony_item_category_id"
+  end
+
+  add_index "patrimonies", ["department_id"], name: "index_patrimonies_on_department_id", using: :btree
+  add_index "patrimonies", ["patrimony_item_category_id"], name: "index_patrimonies_on_patrimony_item_category_id", using: :btree
+
+  create_table "patrimony_item_categories", force: true do |t|
+    t.string   "category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,5 +60,14 @@ ActiveRecord::Schema.define(version: 20140914204901) do
   end
 
   add_index "repertoires", ["music_id"], name: "index_repertoires_on_music_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

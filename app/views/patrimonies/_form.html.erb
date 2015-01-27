@@ -1,0 +1,20 @@
+<%= simple_form_for(@patrimony, html: {class: 'form-horizontal' }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :item %>
+    <%= f.association :patrimony_item_category, label_method: :category, label: "Categoria (#{link_to '+', '#', id: 'modal-item-category', data: { toggle: 'modal', target: '#modal-container-item-category' }})".html_safe %>
+    <%= f.input :price %>
+    <%= f.input :date_of_entry %>
+    <%= f.input :date_of_exit, include_blank: true %>
+    <%= f.association :department, label: "Departamento (#{link_to '+', '#', id: 'modal-department', data: { toggle: 'modal', target: '#modal-container-department' }})".html_safe %>
+    <%= f.input :defect %>
+    <%= f.input :more_info %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+<%= render 'departments/modal' %>
+<%= render 'patrimony_item_categories/modal' %>

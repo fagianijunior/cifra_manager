@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: MyString
+  price: 1.5
+  date_of_entry: 2015-01-13
+  date_of_exit: 2015-01-13
+  department_id: 
+  defect: false
+  more_info: MyText
+
+two:
+  item: MyString
+  price: 1.5
+  date_of_entry: 2015-01-13
+  date_of_exit: 2015-01-13
+  department_id: 
+  defect: false
+  more_info: MyText

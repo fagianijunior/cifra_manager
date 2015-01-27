@@ -1,0 +1,12 @@
+<tr <%= "class=danger" if patrimony.defect? %>>
+  <td><%= "000#{patrimony.id}" %></td>
+  <td><%= link_to patrimony.item, patrimony %></td>
+  <td><%= patrimony.patrimony_item_category.category %></td>
+  <td><%= patrimony.price %></td>
+  <td><%= show_date patrimony.date_of_entry %></td>
+  <td><%= patrimony.date_of_exit %></td>
+  <td><%= patrimony.department.name %></td>
+
+  <td><%= link_to glyph(:edit), edit_patrimony_path(patrimony) %></td>
+  <td><%= link_to glyph(:trash), patrimony, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

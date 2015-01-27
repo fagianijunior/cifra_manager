@@ -2,13 +2,20 @@
   <div class="col-md-12 column">
     <p id="notice"><%= notice %></p>
     <hr>
-    <%= link_to '<< Musicas', musics_path, class: "btn btn-primary" %>
-    <%= link_to 'Editar', edit_music_path(@music), class: "btn btn-primary" %>
-    <%= link_to 'Letra', music_path(@music), class: "btn btn-primary", target: "letra" %>
-    <%= simple_form_for @repertoire do |f| %>
-      <%= f.input :music_id, as: :hidden, input_html: { value: @music.id } %>
-      <%= f.submit "Adicionar ao repertorio", class: "btn btn-primary" %>
-    <% end %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= link_to '<< Musicas', musics_path, class: "btn btn-primary" %>
+        <%= link_to 'Editar', edit_music_path(@music), class: "btn btn-primary" %>
+        <%= link_to 'Letra', music_path(@music), class: "btn btn-primary", target: "letra" %>
+        <%= link_to("Slide", download_slide_path(@music.id), class: "btn btn-primary") unless @music.slide.path.nil? %>
+      </div>
+      <div class="col=md-6 text-right">
+        <%= simple_form_for @repertoire, remote: true do |f| %>
+          <%= f.input :music_id, as: :hidden, input_html: { value: @music.id } %>
+          <%= f.submit "Adicionar ao repertorio", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
     <hr>
     <h3>
       <strong>Title:</strong>
@@ -40,11 +47,11 @@
           </div>
         </div>
       </div>
-        <p><strong>Observations:</strong></p>
-        <%= @music.obs %>
-        <br>
-        <br>
-        <br>
     </div>
+    <p><strong>Obs:</strong></p>
+    <%= @music.obs %>
+    <br>
+    <br>
+    <br>
   </div>
-</div>
+</div> 

@@ -1,6 +1,7 @@
-<tr class="<%= (music.in_use)?'danger':'active' %>">
+<tr>
   <td><%= link_to truncate(music.title, length: 30), music, title: music.title %></td>
   <td><%= truncate(music.lyric, length: 70) %></td>
   <td><%= link_to glyph(:edit), edit_music_path(music) %></td>
+  <td><%= music.slide.path == nil ? glyph(:eye_close) : link_to(glyph(:eye_open), download_slide_path(music)) %></td>
   <td><%= link_to glyph(:trash), music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 </tr>

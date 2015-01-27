@@ -1,5 +1,5 @@
 class MusicsController < ApplicationController
-  before_action :set_music, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_music, only: [ :show, :edit, :update, :destroy, :download_slide ]
 
   # GET /musics
   # GET /musics.json
@@ -66,6 +66,13 @@ class MusicsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def download_slide
+    send_file(
+      @music.slide.path,
+      filename: "#{@music.title.gsub(" ", "_")}#{File.extname(@music.slide.path)}",
+      type: "application/vnd.openxmlformats-officedocument.presentationml.slideshow")
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -75,6 +82,6 @@ class MusicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def music_params
-      params.require(:music).permit(:title, :chord, :lyric, :obs, :in_use)
+      params.require(:music).permit(:title, :chord, :lyric, :obs, :slide)
     end
 end

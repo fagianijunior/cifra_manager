@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'musics/:id/download_slide' => 'musics#download_slide', as: :download_slide
+  #get 'musics/:id/download_slide'
+
+  resources :patrimony_item_categories
+
+  resources :departments
+
+  resources :patrimonies
+
+  resources :users
 
   resources :repertoires
 

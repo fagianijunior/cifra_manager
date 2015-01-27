@@ -1,13 +1,12 @@
-<%= simple_form_for(@music, html: {class: "form-horizontal"}) do |f| %>
-  <%= f.error_notification %>
-  <div class="form-group">
-    <%= f.input :title, label: "Titulo", input_html: { class: "form-control input-lg" } %>
-    <%= f.input :chord, label: "Notas", as: "text", input_html: { class: "form-control input-lg", rows: 10 } %>
-    <%= f.input :lyric, label: "Letra", as: "text", input_html: { class: "form-control input-lg", rows: 10 } %>
-    <%= f.input :obs, label: "Observação", as: "text", input_html: { class: "form-control input-lg", rows: 5 } %>
-  </div>
-  <!-- in_use não é mais utilizado, será removido posteriormente -->
-  <!--%= f.input :in_use, label: "Em uso", input_html: { class: "form-control input-lg" } %-->
-  <hr>
-  <%= f.submit "Salvar", class: "btn btn-default btn-lg" %>
-<% end %>
+  <%= simple_form_for(@music, html: {class: "form-horizontal"}) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-group well">
+      <%= f.input :title, label: "Titulo" %>
+      <%= f.input :chord, label: "Notas", as: "text", input_html: {rows: 10} %>
+      <%= f.input :lyric, label: "Letra", as: "text", input_html: {rows: 10} %>
+      <%= f.input :slide %>
+      <%= f.input :obs, label: "Observação", as: "text", input_html: {rows: 5} %>
+    </div>
+    <hr>
+    <%= f.submit "Salvar", class: "btn btn-default btn-lg" %>
+  <% end %>

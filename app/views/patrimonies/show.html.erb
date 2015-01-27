@@ -1,0 +1,37 @@
+<p>
+  <strong>Item:</strong>
+  <%= @patrimony.item %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @patrimony.price %>
+</p>
+
+<p>
+  <strong>Date of entry:</strong>
+  <%= @patrimony.date_of_entry %>
+</p>
+
+<p>
+  <strong>Date of exit:</strong>
+  <%= @patrimony.date_of_exit %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @patrimony.department.name %>
+</p>
+
+<p>
+  <strong>Defect:</strong>
+  <%= @patrimony.defect %>
+</p>
+
+<p>
+  <strong>More info:</strong>
+  <%= @patrimony.more_info %>
+</p>
+
+<%= link_to 'Edit', edit_patrimony_path(@patrimony) %> |
+<%= link_to 'Back', patrimonies_path %>

@@ -1,0 +1,31 @@
+
+<div class="well">
+  <div class="text-center">
+    <%= will_paginate %>
+  </div>
+  <h1>Patrimônio</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Item</th>
+        <th>Categori</th>
+        <th>Preço</th>
+        <th>Entrada</th>
+        <th>Saída</th>
+        <th>Departamento</th>
+
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <%= render @patrimonies %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= will_paginate %>
+  </div>
+
+</div>
