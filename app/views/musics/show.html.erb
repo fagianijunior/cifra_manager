@@ -50,6 +50,10 @@
     </div>
     <p><strong>Obs:</strong></p>
     <%= @music.obs %>
+    <p><strong>Previsualização do slide</strong></p>
+    <%= slide_images(@music).each do |slide_image| %>
+      <%= image_tag asset_path(slide_image) %>
+    <% end %>
     <br>
     <br>
     <br>

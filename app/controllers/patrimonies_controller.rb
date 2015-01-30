@@ -1,4 +1,5 @@
 class PatrimoniesController < ApplicationController
+  before_action :signed_in_user
   before_action :set_patrimony, only: [:show, :edit, :update, :destroy]
   before_action :set_new_department, :set_new_patrimony_item_category, only: [:new, :edit]
   
@@ -79,5 +80,8 @@ class PatrimoniesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def patrimony_params
       params.require(:patrimony).permit(:item, :patrimony_item_category_id, :price, :date_of_entry, :date_of_exit, :department_id, :defect, :more_info)
+    end
+    def signed_in_user
+      redirect_to(signin_path, alert: "Porfavor logue-se") unless signed_in?
     end
 end

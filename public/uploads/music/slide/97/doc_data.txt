@@ -1,0 +1,36 @@
+InfoBegin
+InfoKey: CreationDate
+InfoValue: D:20150206135355Z'
+InfoBegin
+InfoKey: Author
+InfoValue: Carlos Fagiani
+InfoBegin
+InfoKey: Title
+InfoValue: Slide 1
+InfoBegin
+InfoKey: Creator
+InfoValue: Impress
+InfoBegin
+InfoKey: Producer
+InfoValue: LibreOffice 4.2
+PdfID0: 87bac858c55a31e6e252a135db0cf13d
+PdfID1: 87bac858c55a31e6e252a135db0cf13d
+NumberOfPages: 2
+BookmarkBegin
+BookmarkTitle: Slide 1
+BookmarkLevel: 1
+BookmarkPageNumber: 1
+BookmarkBegin
+BookmarkTitle: Slide 2
+BookmarkLevel: 1
+BookmarkPageNumber: 2
+PageMediaBegin
+PageMediaNumber: 1
+PageMediaRotation: 0
+PageMediaRect: 0 0 720 540
+PageMediaDimensions: 720 540
+PageMediaBegin
+PageMediaNumber: 2
+PageMediaRotation: 0
+PageMediaRect: 0 0 720 540
+PageMediaDimensions: 720 540

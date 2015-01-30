@@ -37,38 +37,9 @@
     <![endif]-->
   </head>
   <body>
-
-    <%= nav_bar fixed: :top, responsive: true, brand: "Cifra Manager 0.5b", brand_link: root_path do %>
-      <%= menu_group do %>
-        <%= menu_item "Home", root_path %>
-        <%= menu_item "Louvor", musics_path %>
-        <%= menu_item "Patrimônio", patrimonies_path %>
-
-        <%= drop_down current_user.first_name do %>
-          <% if signed_in? %>
-            <%= menu_item "Sair", signout_path, method: :delete %>
-          <% end %>
-        <% end %>
-      <% end %>
-    <% end %>
     <div class="container">
-      <div class="row">
-        <div class="col-md-9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-        <div class="col-md-3">
-          <div class="well sidebar-nav">
-            <%= render "menu" %>
-          </div><!--/.well -->
-        </div>
-      </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2015</p>
-      </footer>
-
+      <%= bootstrap_flash %>
+      <%= yield %>
     </div> <!-- /container -->
-
   </body>
 </html>

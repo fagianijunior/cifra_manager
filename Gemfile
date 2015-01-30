@@ -5,6 +5,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'bootstrap-will_paginate'
 
 gem 'carrierwave'
+gem 'docsplit'
 
 gem 'ransack'
 gem 'simple_form', '~> 3.1.0'
@@ -34,7 +35,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.9'
 
 # Use unicorn as the app server
 # gem 'unicorn'

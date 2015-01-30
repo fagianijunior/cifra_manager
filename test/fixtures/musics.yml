@@ -5,11 +5,9 @@ one:
   chord: MyText
   lyric: MyText
   obs: MyString
-  in_use: false
 
 two:
   title: MyString
   chord: MyText
   lyric: MyText
   obs: MyString
-  in_use: false

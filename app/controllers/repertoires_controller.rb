@@ -1,4 +1,5 @@
 class RepertoiresController < ApplicationController
+  before_action :signed_in_user
   before_action :set_repertoire, only: [:show, :edit, :update, :destroy]
 
   # GET /repertoires
@@ -70,5 +71,9 @@ class RepertoiresController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def repertoire_params
       params.require(:repertoire).permit(:order, :music_id)
+    end
+    
+    def signed_in_user
+      redirect_to(signin_path, alert: "Porfavor logue-se") unless signed_in?
     end
 end

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+  <h2 class="text-center">Logar</h2>
+
+  <%= simple_form_for(:session, url: sessions_path, html: { class: "form-horizontal" }) do |f| %>
+    <div class="form-group">
+      <%= f.input :email %>
+    </div>
+    <div class="form-group">
+      <%= f.input :password, label: "Senha" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Sign In", class: "btn btn-large btn-primary" %>
+    </div>
+  <% end %>
+
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>
