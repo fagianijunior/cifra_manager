@@ -1,4 +1,5 @@
 class MusicsController < ApplicationController
+  before_action :signed_in_user
   before_action :set_music, only: [ :show, :edit, :update, :destroy, :download_slide ]
 
   # GET /musics
@@ -83,5 +84,9 @@ class MusicsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def music_params
       params.require(:music).permit(:title, :chord, :lyric, :obs, :slide)
+    end
+    
+    def signed_in_user
+      redirect_to(signin_path, alert: "Porfavor logue-se") unless signed_in?
     end
 end

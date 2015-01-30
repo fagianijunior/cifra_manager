@@ -1,4 +1,5 @@
 class PatrimonyItemCategoriesController < ApplicationController
+  before_action :signed_in_user
   before_action :set_patrimony_item_category, only: [:show, :edit, :update, :destroy]
 
   # GET /patrimony_item_categories
@@ -70,5 +71,9 @@ class PatrimonyItemCategoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def patrimony_item_category_params
       params.require(:patrimony_item_category).permit(:category)
+    end
+    
+    def signed_in_user
+      redirect_to(signin_path, alert: "Porfavor logue-se") unless signed_in?
     end
 end

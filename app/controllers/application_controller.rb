@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
+  include SessionsHelper
+  
   before_filter :set_global_search_variable
   before_action :set_repertoires
   before_action :set_repertoire_new
