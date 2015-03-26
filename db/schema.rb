@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150131152508) do
+=======
+ActiveRecord::Schema.define(version: 20150128183416) do
+>>>>>>> 346ba98d3343dfc76599e18d8f636d0ca9fc9489
 
   create_table "departments", force: true do |t|
     t.string   "name"
@@ -78,6 +82,9 @@ ActiveRecord::Schema.define(version: 20150131152508) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+<<<<<<< HEAD
   add_index "users", ["user_status_id"], name: "index_users_on_user_status_id", using: :btree
+=======
+>>>>>>> 346ba98d3343dfc76599e18d8f636d0ca9fc9489
 
 end

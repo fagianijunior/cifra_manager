@@ -39,7 +39,11 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+<<<<<<< HEAD
     bcrypt (3.1.10)
+=======
+    bcrypt (3.1.9)
+>>>>>>> 346ba98d3343dfc76599e18d8f636d0ca9fc9489
     bootstrap-will_paginate (0.0.10)
       will_paginate
     builder (3.2.2)

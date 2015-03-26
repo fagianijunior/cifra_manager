@@ -46,7 +46,11 @@
 
         <%= drop_down current_user.first_name do %>
           <% if signed_in? %>
+<<<<<<< HEAD
             <%= menu_item "Sair", signout_path, method: :delete %>
+=======
+            <%= menu_item "Sign Out", signout_path, method: :delete %>
+>>>>>>> 346ba98d3343dfc76599e18d8f636d0ca9fc9489
           <% end %>
         <% end %>
       <% end %>

@@ -1,8 +1,12 @@
 class User < ActiveRecord::Base
+<<<<<<< HEAD
   
   belongs_to :user_status
   
   
+=======
+
+>>>>>>> 346ba98d3343dfc76599e18d8f636d0ca9fc9489
   before_save { self.email = email.downcase }
   
   validates :first_name, presence: true
