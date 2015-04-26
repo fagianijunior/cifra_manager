@@ -1,12 +1,8 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
   
   layout "sessions", only: [:new]
 
-  before_action :signed_in_user, except: [:new, :create]
-=======
   before_action :signed_in_user
->>>>>>> 346ba98d3343dfc76599e18d8f636d0ca9fc9489
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   

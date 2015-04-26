@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: carlosfagiani
-  password: a4qpdvb7
+  username: root
+  password: tutopiajr
   host: localhost
 
 development:
